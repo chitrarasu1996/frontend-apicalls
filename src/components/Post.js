@@ -14,7 +14,7 @@ const navigate=useNavigate();
         await postData({productName,category:productCategory,price:productPrice});
         navigate("/")
       }else{
-        alert("please fill all fields")
+        alert(" fill all fields")
       }
    
      
