@@ -1,0 +1,37 @@
+/* .allproducts{
+    display:flex;
+
+}
+
+/* 
+.product{
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    background-color:green;
+    color:white;
+
+} */ 
+
+.products-wrappper{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 40vh;
+    flex-wrap: wrap;
+
+}
+
+.hole-product{
+    background-color: beige;
+    height: 100vh;
+}
+.product{
+    border: 1px solid goldenrod;
+   padding: 1em;
+   flex-basis: 25%;
+   background-color: green;
+   border-radius:5px;
+   color: white;
+}

@@ -1,24 +1,51 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Routes,Route } from 'react-router-dom';
+
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import ProductList from './components/ProductList';
+// import { createContext } from 'react';
+import Post from './components/Post';
+import Update from './components/Update';
+import { createContext, useState } from 'react';
+
+export const prodcutContext=createContext([])
+
 
 function App() {
+
+  const [updateProducts,setUpdateProducts]=useState({
+    productName:"",
+    category:"",
+    price:""
+
+  });
+
+
+  const updateProductDetails=(values)=>{
+
+    setUpdateProducts(details=>{
+      return({...details,...values})
+    })
+  }
   return (
+  
+
+ 
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+   <prodcutContext.Provider value={{updateProducts:updateProducts,updateProductDetails:updateProductDetails,setUpdateProducts:setUpdateProducts}} >
+        <Routes >
+       
+<Route path='/' element={<ProductList/>} />
+<Route path="/post" element={<Post/>}/>
+   <Route path="/update" element={<Update/>} />
+     </Routes>
+     </prodcutContext.Provider>
+    
     </div>
+  
   );
 }
 
